@@ -1,0 +1,3 @@
+[submodule "lib/VBA_General"]
+	path = lib/VBA_General
+	url = https://github.com/dnissim/VBA_General.git
