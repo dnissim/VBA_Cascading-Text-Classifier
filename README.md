@@ -28,7 +28,7 @@ This is a custom ML algorithm I developed and implemented in VBA to classify tex
 Along with working with data, one of my passions is personal finance, so since 2016 I have tracked and classified every single transaction I've made (groceries, rent, restaurants, cash withdrawals, transfer to/from specific accounts, etc.).
 This allows me to see how my money flows and grows, how my spending compares to budget, and gives me great data for future financial planning.
 
-First I built an Excel based Finance dashboard with an underlying database and data model.
+First I built an Excel based Finance dashboard with an underlying [database](. "Forgive me, I know Excel isn't a database.") and data model.
 Next I developed a flexible VBA based ETL process to load downloaded data from various banking institutions into my 'database'.
 And finally, I developed this machine learning algorithm and codebase to automatically classify transactions as a final step to the loading process.
 
@@ -171,6 +171,10 @@ Observations:
 - Combining the cascading and filtering methods allows for classification of nearly all transactions while still maintaining an 84% accuracy
 
 ![Classification accuracy by method](assets/classification_accuracy.png "Classification accuracy by method")
+
+When inspecting the 15% of transactions that were incorrectly classified & 1% not classified, two unsurprising trends emerged:
+1. The classifier struggled with transactions that could fall into different categories depending on the circumstances (e.g. eTransfer from friends, purchases from Amazon)
+2. The classifier struggled with one off locations lacking key words that appear in other transactions. This is particularly common in transactions that occurred during travel in non-english speaking countries.
 
 #### 4.2.2 Classification Time
 The box-and-whisker chart below shows the distribution of guess times by method.
